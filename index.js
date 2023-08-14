@@ -11,6 +11,29 @@ const tutorials = [
   'what is JSONP?'
 ];
 
-const titleCased = () => {
-  return tutorials
-}
+////////////////////////////////////////This is the way i intially did it, but the test wouldnt let me pass
+
+// const titleCased = (sentence)=> {
+//       let words = sentence.split(" ");
+//       let titleSentence = words.map(function(word){
+//         return word.charAt(0).toUpperCase() + word.slice(1);
+//       })
+//       return titleSentence.join(" ");
+//     }
+// const newTutorials = tutorials.map(titleCased)
+// console.log(newTutorials);
+
+//////////////////////////////////////////////////////////
+
+const titleCased = ()=> {
+  return tutorials.map(function(sentence){
+          let words = sentence.split(" ");
+          let titleSentence = words.map(function(word){
+          return word.charAt(0).toUpperCase() + word.slice(1);
+      })
+      return titleSentence.join(" ");
+    })
+  }
+
+  console.log(titleCased())
+
